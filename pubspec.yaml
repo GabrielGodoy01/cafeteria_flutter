@@ -20,3 +20,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: PTSerif
+      fonts:
+        - asset: assets/PTSerif-Regular.ttf
+        - asset: assets/PTSerif-Bold.ttf
+
+  assets:
+    - assets/
