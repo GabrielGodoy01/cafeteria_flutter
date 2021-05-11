@@ -1,10 +1,14 @@
-import 'package:cafeteria_flutter/shared/models/coffee_model.dart';
+import 'package:cafeteria_flutter/home/home_page_controller.dart';
+import 'package:cafeteria_flutter/shared/models/coffee_list_model.dart';
 import 'package:flutter/material.dart';
 
 class CardCoffeeWidget extends StatelessWidget {
-  final CoffeeModel coffeeModel;
-  const CardCoffeeWidget({Key? key, required this.coffeeModel})
-      : super(key: key);
+  final String controllerNome;
+
+  const CardCoffeeWidget({
+    Key? key,
+    required this.controllerNome,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,7 @@ class CardCoffeeWidget extends StatelessWidget {
         Card(
           color: Colors.red,
           child: Column(
-            children: [Text("Café"), Text("Caffé Misto")],
+            children: [Text(controllerNome), Text("Caffé Misto")],
           ),
         ),
       ],
