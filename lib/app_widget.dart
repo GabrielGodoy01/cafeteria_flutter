@@ -9,7 +9,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Cafeteria - Flutter App",
-      theme: ThemeData(fontFamily: 'PTSerif'),
+      theme: ThemeData(fontFamily: 'Varela'),
       home: HomePage(),
     );
   }

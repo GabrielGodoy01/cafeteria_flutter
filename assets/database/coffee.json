@@ -1,4 +1,4 @@
-[
+
     {
         "cafe": [
     
@@ -6,17 +6,17 @@
                  "nome": "Caffé Misto",
                  "descricao": "Café com leite com leite leite de leite de macho",
                  "preco": "4,99",
-                 "imagem": "assets/ncup.png"
+                 "imagem": "assets/twocup.png"
              },
          
              {
                  "nome": "Café Macciato",
                  "descricao": "Café com leite com leite leite de leite de macho",
-                 "preco": "60",
+                 "preco": "12,90",
                  "imagem": "assets/twocup.png"
              }
         ]
     }
-]
+
 
     

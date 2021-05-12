@@ -26,6 +26,11 @@ flutter:
       fonts:
         - asset: assets/PTSerif-Regular.ttf
         - asset: assets/PTSerif-Bold.ttf
+    - family: Varela
+      fonts:
+        - asset: assets/Varela-Regular.ttf
+        
+     
 
   assets:
     - assets/

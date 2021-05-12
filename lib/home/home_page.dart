@@ -17,43 +17,48 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
-      body: Column(children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Sabor da semana",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "See all",
-                  style: TextStyle(color: Colors.grey.shade500),
+      body: ListView(children: [
+        Column(children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Sabor da semana",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
-              )
-            ],
-          ),
-        ),
-        Container(
-          height: 200,
-          child: FutureBuilder(
-            future: controller.getCafe(),
-            builder: (context, snapshot) => ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return CardCoffeeWidget(
-                  controllerNome: controller.coffee!.cafeList[index].nome,
-                );
-              },
-              itemCount: controller.coffee!.cafeList.length,
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "See all",
+                    style: TextStyle(color: Colors.grey.shade500),
+                  ),
+                )
+              ],
             ),
           ),
-        )
+          Container(
+            height: 350,
+            child: FutureBuilder(
+              future: controller.getCafe(),
+              builder: (context, snapshot) => ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return CardCoffeeWidget(
+                    nome: controller.coffee.cafeList[index].nome,
+                    descricao: controller.coffee.cafeList[index].descricao,
+                    preco: controller.coffee.cafeList[index].preco,
+                    imagem: controller.coffee.cafeList[index].imagem,
+                  );
+                },
+                itemCount: controller.coffee.cafeList.length,
+              ),
+            ),
+          )
+        ]),
       ]),
     );
   }
