@@ -5,19 +5,29 @@ class CoffeeModel {
   final String descricao;
   final String preco;
   final String imagem;
+  final String tempoPreparacao;
+  final String ingredientes;
+  final Map informacoesNutricionais;
 
-  CoffeeModel(
-      {required this.nome,
-      required this.descricao,
-      required this.preco,
-      required this.imagem});
+  CoffeeModel({
+    required this.nome,
+    required this.descricao,
+    required this.preco,
+    required this.imagem,
+    required this.tempoPreparacao,
+    required this.ingredientes,
+    required this.informacoesNutricionais,
+  });
 
   Map<String, dynamic> toMap() {
     return {
       'nome': nome,
       'descricao': descricao,
       'preco': preco,
-      'imagem': imagem
+      'imagem': imagem,
+      'tempoPreparacao': tempoPreparacao,
+      'ingredientes': ingredientes,
+      'informacoesNutricionais': informacoesNutricionais,
     };
   }
 
@@ -27,6 +37,9 @@ class CoffeeModel {
       descricao: map['descricao'],
       preco: map['preco'],
       imagem: map['imagem'],
+      tempoPreparacao: map['tempoPreparacao'],
+      ingredientes: map['Ingredientes'],
+      informacoesNutricionais: map['informacoesNutricionais'],
     );
   }
 

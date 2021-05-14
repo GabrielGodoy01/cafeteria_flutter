@@ -4,16 +4,30 @@
     
             { 
                  "nome": "Caffé Misto",
-                 "descricao": "Café com leite com leite leite de leite de macho",
+                 "descricao": "Café com leite devidamente preparado por profissionais",
                  "preco": "4,99",
-                 "imagem": "assets/twocup.png"
+                 "imagem": "assets/twocup.png",
+                 "tempoPreparacao": "5",
+                 "ingredientes": "Café",
+                 "informacoesNutricionais": {
+                     "calorias": "250",
+                     "proteina": "250",
+                     "cafeina": "250"
+                 }
              },
          
              {
                  "nome": "Café Macciato",
-                 "descricao": "Café com leite com leite leite de leite de macho",
+                 "descricao": "Café com leite devidamente preparado por profissionais",
                  "preco": "12,90",
-                 "imagem": "assets/twocup.png"
+                 "imagem": "assets/twocup.png",
+                 "tempoPreparacao": "4",
+                 "ingredientes": "Café com leite",
+                 "informacoesNutricionais": {
+                     "calorias": "250",
+                     "proteina": "250",
+                     "cafeina": "250"
+                 }
              }
         ]
     }

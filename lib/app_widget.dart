@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'details/details_page.dart';
 import 'home/home_page.dart';
 
 class AppWidget extends StatelessWidget {
@@ -10,7 +11,7 @@ class AppWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Cafeteria - Flutter App",
       theme: ThemeData(fontFamily: 'Varela'),
-      home: HomePage(),
+      home: DetailsPage(),
     );
   }
 }
