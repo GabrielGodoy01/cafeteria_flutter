@@ -7,7 +7,7 @@ class CoffeeModel {
   final String imagem;
   final String tempoPreparacao;
   final String ingredientes;
-  final Map informacoesNutricionais;
+  final String informacoesNutricionais;
 
   CoffeeModel({
     required this.nome,

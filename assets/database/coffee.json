@@ -9,11 +9,7 @@
                  "imagem": "assets/twocup.png",
                  "tempoPreparacao": "5",
                  "ingredientes": "Café",
-                 "informacoesNutricionais": {
-                     "calorias": "250",
-                     "proteina": "250",
-                     "cafeina": "250"
-                 }
+                 "informacoesNutricionais": "nutricao"
              },
          
              {
@@ -23,11 +19,7 @@
                  "imagem": "assets/twocup.png",
                  "tempoPreparacao": "4",
                  "ingredientes": "Café com leite",
-                 "informacoesNutricionais": {
-                     "calorias": "250",
-                     "proteina": "250",
-                     "cafeina": "250"
-                 }
+                 "informacoesNutricionais": "nutricao"
              }
         ]
     }
