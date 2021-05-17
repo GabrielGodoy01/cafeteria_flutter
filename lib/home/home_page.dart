@@ -1,4 +1,3 @@
-import 'package:cafeteria_flutter/home/home_page_controller.dart';
 import 'package:cafeteria_flutter/home/widgets/appbar_widget.dart';
 import 'package:cafeteria_flutter/home/widgets/card_coffee_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final controller = HomeController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,21 +40,36 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            height: 324,
-            child: FutureBuilder(
-              future: controller.getCafe(),
-              builder: (context, snapshot) => ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return CardCoffeeWidget(
-                    nome: controller.coffee.cafeList[index].nome,
-                    descricao: controller.coffee.cafeList[index].descricao,
-                    preco: controller.coffee.cafeList[index].preco,
-                    imagem: controller.coffee.cafeList[index].imagem,
-                  );
-                },
-                itemCount: controller.coffee.cafeList.length,
-              ),
+            height: 331,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Row(
+                  children: [
+                    CardCoffeeWidget(
+                      nome: "Caffé Misto",
+                      descricao:
+                          "Café com leite devidamente preparado por profissionais",
+                      preco: "4,99",
+                      imagem: "assets/twocup.png",
+                    ),
+                    CardCoffeeWidget(
+                      nome: "Caffé Misto",
+                      descricao:
+                          "Café com leite devidamente preparado por profissionais",
+                      preco: "4,99",
+                      imagem: "assets/twocup.png",
+                    ),
+                    CardCoffeeWidget(
+                      nome: "Caffé Misto",
+                      descricao:
+                          "Café com leite devidamente preparado por profissionais",
+                      preco: "12,90",
+                      imagem: "assets/twocup.png",
+                    ),
+                  ],
+                )
+              ],
             ),
           ),
           SizedBox(

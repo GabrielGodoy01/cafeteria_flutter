@@ -1,3 +1,5 @@
+import 'package:cafeteria_flutter/details/details_page.dart';
+import 'package:cafeteria_flutter/shared/widgets/like_icon_widget.dart';
 import 'package:flutter/material.dart';
 
 class CardCoffeeWidget extends StatelessWidget {
@@ -72,11 +74,7 @@ class CardCoffeeWidget extends StatelessWidget {
                                   fontSize: 20,
                                   fontFamily: "PTSerif"),
                             ),
-                            Icon(
-                              Icons.favorite,
-                              color: Colors.pink,
-                              size: 32.0,
-                            )
+                            LikeIconWidget(),
                           ],
                         )
                       ],
@@ -96,11 +94,16 @@ class CardCoffeeWidget extends StatelessWidget {
             ],
           ),
           Container(
-            width: 225,
+            width: MediaQuery.of(context).size.width * 0.8,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DetailsPage()),
+                );
+              },
               child: Text(
-                "Order now",
+                "Comprar",
                 style: TextStyle(color: Colors.white),
               ),
               style: TextButton.styleFrom(

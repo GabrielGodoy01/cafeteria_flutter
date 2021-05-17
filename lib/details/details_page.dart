@@ -1,4 +1,10 @@
+import 'package:cafeteria_flutter/shared/widgets/like_icon_widget.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/informations_widget.dart';
+import 'widgets/ingredients_widget.dart';
+import 'widgets/order_now_button_widget.dart';
+import 'widgets/prepare_time_widget.dart';
 
 class DetailsPage extends StatelessWidget {
   const DetailsPage({Key? key}) : super(key: key);
@@ -19,17 +25,26 @@ class DetailsPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        padding: EdgeInsets.only(top: 20, left: 18),
-                        width: MediaQuery.of(context).size.width * 0.6,
-                        child: Text(
-                          "Café Macciato",
-                          style: TextStyle(
-                              fontSize: 34.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                          textAlign: TextAlign.left,
-                        ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(top: 20, left: 18),
+                            width: MediaQuery.of(context).size.width * 0.55,
+                            child: Text(
+                              "Café Macciato",
+                              style: TextStyle(
+                                  fontSize: 34.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 60),
+                            child: LikeIconWidget(),
+                          ),
+                        ],
                       ),
                       Container(
                         padding: EdgeInsets.only(top: 20, left: 18),
@@ -50,30 +65,24 @@ class DetailsPage extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 320),
+        Expanded(
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              PrepareTimeWidget(),
+              IngredientsWidget(),
+              InformationsWidget(),
+              OrderNowButtonWidget(),
+            ],
+          ),
+        ),
+        Positioned(
+          top: 80,
+          left: 30,
           child: Container(
-            alignment: Alignment.topLeft,
-            height: MediaQuery.of(context).size.width * 1.2,
-            width: MediaQuery.of(context).size.width * 1,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40)),
-                color: Colors.white),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20, top: 24),
-              child: Column(
-                children: [
-                  Text(
-                    "Preparation time",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF473D3A),
-                        fontSize: 17),
-                  )
-                ],
-              ),
+            width: MediaQuery.of(context).size.width * 1.4,
+            child: Image(
+              image: AssetImage("assets/pinkcup.png"),
             ),
           ),
         ),
