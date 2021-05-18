@@ -17,7 +17,7 @@ class InformationsWidget extends StatelessWidget {
           color: Colors.white,
           border: Border(
               top: BorderSide(width: 1.0, color: Colors.grey.shade300),
-              bottom: BorderSide(width: 1.0, color: Colors.grey.shade300)),
+              bottom: BorderSide(width: 2.0, color: Colors.grey.shade300)),
         ),
         alignment: Alignment.topLeft,
         height: MediaQuery.of(context).size.width * 0.39,
