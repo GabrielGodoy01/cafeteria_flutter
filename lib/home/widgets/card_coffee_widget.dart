@@ -1,12 +1,16 @@
 import 'package:cafeteria_flutter/details/details_page.dart';
+import 'package:cafeteria_flutter/shared/models/informacoes_nutricionais_model.dart';
 import 'package:cafeteria_flutter/shared/widgets/like_icon_widget.dart';
 import 'package:flutter/material.dart';
 
 class CardCoffeeWidget extends StatelessWidget {
   final String nome;
   final String descricao;
-  final String preco;
+  final double preco;
   final String imagem;
+  final int tempoPreparacao;
+  final List<String> ingredientes;
+  final InformacoesNutricionaisModel informacoesNutricionais;
 
   const CardCoffeeWidget({
     Key? key,
@@ -14,6 +18,9 @@ class CardCoffeeWidget extends StatelessWidget {
     required this.descricao,
     required this.preco,
     required this.imagem,
+    required this.tempoPreparacao,
+    required this.ingredientes,
+    required this.informacoesNutricionais,
   }) : super(key: key);
 
   @override
@@ -41,41 +48,47 @@ class CardCoffeeWidget extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          nome,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 28,
-                              fontFamily: "PTSerif"),
+                        Container(
+                          height: 80,
+                          child: Text(
+                            nome,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 28,
+                                fontFamily: "PTSerif"),
+                          ),
                         ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          descricao,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontFamily: "PTSerif"),
-                          textAlign: TextAlign.justify,
+                        Container(
+                          height: 70,
+                          child: Text(
+                            descricao,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontFamily: "PTSerif"),
+                            textAlign: TextAlign.justify,
+                          ),
                         ),
                         SizedBox(
                           height: 12,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'R\$ ${preco}',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF473D3A),
-                                  fontSize: 20,
-                                  fontFamily: "PTSerif"),
-                            ),
-                            LikeIconWidget(),
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 2),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'R\$ $preco',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xFF473D3A),
+                                    fontSize: 20,
+                                    fontFamily: "PTSerif"),
+                              ),
+                              LikeIconWidget(),
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -99,7 +112,16 @@ class CardCoffeeWidget extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DetailsPage()),
+                  MaterialPageRoute(
+                      builder: (context) => DetailsPage(
+                            nome: nome,
+                            descricao: descricao,
+                            preco: preco,
+                            imagem: imagem,
+                            tempoPreparacao: tempoPreparacao,
+                            informacoesNutricionais: informacoesNutricionais,
+                            ingredientes: ingredientes,
+                          )),
                 );
               },
               child: Text(

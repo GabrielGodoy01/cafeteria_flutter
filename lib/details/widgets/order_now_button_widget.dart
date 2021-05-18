@@ -8,12 +8,13 @@ class OrderNowButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+        width: MediaQuery.of(context).size.width * 1,
+        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 16),
         decoration: BoxDecoration(
           color: Colors.white,
         ),
         child: Container(
-          height: MediaQuery.of(context).size.height * 0.085,
+          height: MediaQuery.of(context).size.height * 0.083,
           decoration: BoxDecoration(
               color: Color(0xFF473D3A),
               borderRadius: BorderRadius.circular(30)),

@@ -17,7 +17,8 @@ class IngredientsIconWidget extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                  color: Colors.black, borderRadius: BorderRadius.circular(15)),
+                  color: Colors.pink.shade300,
+                  borderRadius: BorderRadius.circular(15)),
               height: MediaQuery.of(context).size.width * 0.12,
               width: MediaQuery.of(context).size.width * 0.12,
               child: Icon(

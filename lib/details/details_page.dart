@@ -1,3 +1,4 @@
+import 'package:cafeteria_flutter/shared/models/informacoes_nutricionais_model.dart';
 import 'package:cafeteria_flutter/shared/widgets/like_icon_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -7,14 +8,31 @@ import 'widgets/order_now_button_widget.dart';
 import 'widgets/prepare_time_widget.dart';
 
 class DetailsPage extends StatelessWidget {
-  const DetailsPage({Key? key}) : super(key: key);
+  final String nome;
+  final String descricao;
+  final double preco;
+  final String imagem;
+  final int tempoPreparacao;
+  final List<String> ingredientes;
+  final InformacoesNutricionaisModel informacoesNutricionais;
+
+  const DetailsPage(
+      {Key? key,
+      required this.nome,
+      required this.descricao,
+      required this.preco,
+      required this.imagem,
+      required this.tempoPreparacao,
+      required this.ingredientes,
+      required this.informacoesNutricionais})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
         Container(
-          decoration: BoxDecoration(color: Color(0xFFF3B2B7)),
+          decoration: BoxDecoration(color: Color(0xFFDAB68C)),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 32),
             child: Column(
@@ -26,13 +44,12 @@ class DetailsPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
                             padding: EdgeInsets.only(top: 20, left: 18),
                             width: MediaQuery.of(context).size.width * 0.55,
                             child: Text(
-                              "Café Macciato",
+                              nome,
                               style: TextStyle(
                                   fontSize: 34.0,
                                   fontWeight: FontWeight.bold,
@@ -40,17 +57,13 @@ class DetailsPage extends StatelessWidget {
                               textAlign: TextAlign.left,
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 60),
-                            child: LikeIconWidget(),
-                          ),
                         ],
                       ),
                       Container(
                         padding: EdgeInsets.only(top: 20, left: 18),
                         width: MediaQuery.of(context).size.width * 0.55,
                         child: Text(
-                          "descrição do café de macho macho",
+                          descricao,
                           style: TextStyle(
                             fontSize: 14.0,
                             color: Colors.white,
@@ -65,24 +78,30 @@ class DetailsPage extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
-          child: ListView(
-            shrinkWrap: true,
-            children: [
-              PrepareTimeWidget(),
-              IngredientsWidget(),
-              InformationsWidget(),
-              OrderNowButtonWidget(),
-            ],
-          ),
+        Column(
+          children: [
+            PrepareTimeWidget(
+              tempoPreparacao: tempoPreparacao,
+            ),
+            IngredientsWidget(),
+            InformationsWidget(
+              informacoesNutricionais: informacoesNutricionais,
+            ),
+            OrderNowButtonWidget(),
+          ],
         ),
         Positioned(
-          top: 80,
+          top: 60,
+          left: 250,
+          child: LikeIconWidget(),
+        ),
+        Positioned(
+          top: 30,
           left: 30,
           child: Container(
             width: MediaQuery.of(context).size.width * 1.4,
             child: Image(
-              image: AssetImage("assets/pinkcup.png"),
+              image: AssetImage(imagem),
             ),
           ),
         ),

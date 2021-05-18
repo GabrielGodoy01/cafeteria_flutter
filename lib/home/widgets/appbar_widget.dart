@@ -50,7 +50,7 @@ class AppBarWidget extends PreferredSize {
                     alignment: Alignment.topCenter,
                     child: CircleAvatar(
                       backgroundImage: NetworkImage(
-                          "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg"),
+                          "https://avatars.githubusercontent.com/u/24724451?v=4"),
                       radius: 32,
                     ),
                   ),

@@ -17,8 +17,7 @@ class IngredientsWidget extends StatelessWidget {
             bottom: BorderSide(width: 1.0, color: Colors.grey.shade300)),
       ),
       alignment: Alignment.topLeft,
-      height: MediaQuery.of(context).size.width * 0.45,
-      width: MediaQuery.of(context).size.width * 1,
+      height: MediaQuery.of(context).size.width * 0.44,
       child: Padding(
         padding: const EdgeInsets.only(left: 20, top: 24),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -40,7 +39,7 @@ class IngredientsWidget extends StatelessWidget {
                 ),
                 IngredientsIconWidget(
                   icon: Icons.favorite,
-                  text: "Sugar  ",
+                  text: "Sugar",
                 ),
                 IngredientsIconWidget(
                   icon: Icons.access_alarm_sharp,

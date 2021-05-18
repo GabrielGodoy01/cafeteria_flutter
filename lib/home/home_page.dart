@@ -1,3 +1,4 @@
+import 'package:cafeteria_flutter/home/home_controller.dart';
 import 'package:cafeteria_flutter/home/widgets/appbar_widget.dart';
 import 'package:cafeteria_flutter/home/widgets/card_coffee_widget.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final HomeController controller = HomeController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,41 +41,25 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+          SizedBox(height: 2),
           Container(
-            height: 331,
-            child: ListView(
+            height: 400,
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              children: [
-                Row(
-                  children: [
-                    CardCoffeeWidget(
-                      nome: "Caffé Misto",
-                      descricao:
-                          "Café com leite devidamente preparado por profissionais",
-                      preco: "4,99",
-                      imagem: "assets/twocup.png",
-                    ),
-                    CardCoffeeWidget(
-                      nome: "Caffé Misto",
-                      descricao:
-                          "Café com leite devidamente preparado por profissionais",
-                      preco: "4,99",
-                      imagem: "assets/twocup.png",
-                    ),
-                    CardCoffeeWidget(
-                      nome: "Caffé Misto",
-                      descricao:
-                          "Café com leite devidamente preparado por profissionais",
-                      preco: "12,90",
-                      imagem: "assets/twocup.png",
-                    ),
-                  ],
-                )
-              ],
+              itemBuilder: (context, index) {
+                return CardCoffeeWidget(
+                  descricao: controller.lista[index].descricao,
+                  imagem: controller.lista[index].imagem,
+                  nome: controller.lista[index].nome,
+                  preco: controller.lista[index].preco,
+                  tempoPreparacao: controller.lista[index].tempoPreparacao,
+                  ingredientes: controller.lista[index].ingredientes,
+                  informacoesNutricionais:
+                      controller.lista[index].informacoesNutricionais,
+                );
+              },
+              itemCount: controller.lista.length,
             ),
-          ),
-          SizedBox(
-            height: 24,
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),

@@ -1,10 +1,13 @@
+import 'package:cafeteria_flutter/shared/models/informacoes_nutricionais_model.dart';
 import 'package:flutter/material.dart';
 
 import 'nutricional_information_widget.dart';
 
 class InformationsWidget extends StatelessWidget {
+  final InformacoesNutricionaisModel informacoesNutricionais;
   const InformationsWidget({
     Key? key,
+    required this.informacoesNutricionais,
   }) : super(key: key);
 
   @override
@@ -17,8 +20,7 @@ class InformationsWidget extends StatelessWidget {
               bottom: BorderSide(width: 1.0, color: Colors.grey.shade300)),
         ),
         alignment: Alignment.topLeft,
-        height: MediaQuery.of(context).size.width * 0.45,
-        width: MediaQuery.of(context).size.width * 1,
+        height: MediaQuery.of(context).size.width * 0.39,
         child: Padding(
           padding: const EdgeInsets.only(left: 20, top: 24),
           child:
@@ -31,15 +33,19 @@ class InformationsWidget extends StatelessWidget {
                   fontSize: 17),
             ),
             Container(
-              height: MediaQuery.of(context).size.width * 0.31,
+              height: MediaQuery.of(context).size.width * 0.24,
               child: Column(
                 children: [
-                  NutricionalInformationWidget(text: "Calorias", valor: "250"),
+                  NutricionalInformationWidget(
+                      text: "Calorias",
+                      valor: informacoesNutricionais.calorias.toString()),
                   NutricionalInformationWidget(
                     text: "Proteínas",
-                    valor: "10g",
+                    valor: "${informacoesNutricionais.proteinas.toString()}g",
                   ),
-                  NutricionalInformationWidget(text: "Cafeína", valor: "150mg"),
+                  NutricionalInformationWidget(
+                      text: "Cafeína",
+                      valor: "${informacoesNutricionais.cafeina.toString()}mg"),
                 ],
               ),
             )

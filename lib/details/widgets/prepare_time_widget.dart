@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class PrepareTimeWidget extends StatelessWidget {
+  final int tempoPreparacao;
   const PrepareTimeWidget({
     Key? key,
+    required this.tempoPreparacao,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 320),
+      padding: const EdgeInsets.only(top: 220),
       child: Container(
         alignment: Alignment.topLeft,
         height: MediaQuery.of(context).size.width * 0.25,
@@ -33,7 +35,7 @@ class PrepareTimeWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Text(
-                  "5min",
+                  "${tempoPreparacao}min",
                   style: TextStyle(color: Colors.grey.shade500, fontSize: 15),
                 ),
               )
