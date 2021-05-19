@@ -87,7 +87,9 @@ class DetailsPage extends StatelessWidget {
             InformationsWidget(
               informacoesNutricionais: informacoesNutricionais,
             ),
-            OrderNowButtonWidget(),
+            OrderNowButtonWidget(
+              preco: preco,
+            ),
           ],
         ),
         Positioned(

@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 
 import 'cup_details_widget.dart';
 import 'items_details_widget.dart';
+import 'total_details_widget.dart';
 
 class OrderNowButtonWidget extends StatefulWidget {
+  final double preco;
   const OrderNowButtonWidget({
     Key? key,
+    required this.preco,
   }) : super(key: key);
 
   @override
@@ -38,8 +41,8 @@ class _OrderNowButtonWidgetState extends State<OrderNowButtonWidget> {
                         topRight: Radius.circular(40))),
                 context: context,
                 builder: (BuildContext context) {
-                  return StatefulBuilder(builder: (BuildContext context,
-                      StateSetter setState /*You can rename this!*/) {
+                  return StatefulBuilder(
+                      builder: (BuildContext context, StateSetter setState) {
                     return Container(
                       height: MediaQuery.of(context).size.height * 0.73,
                       child: Column(
@@ -60,6 +63,9 @@ class _OrderNowButtonWidgetState extends State<OrderNowButtonWidget> {
                           TemperatureQuantityWidget(),
                           CupDetailsWidget(),
                           ItemsDetailsWidget(),
+                          TotalDetailsWidget(
+                            preco: widget.preco,
+                          ),
                         ],
                       ),
                     );
