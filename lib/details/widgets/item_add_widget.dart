@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ItemAddWidget extends StatefulWidget {
+  final String text;
+  final IconData icon;
   const ItemAddWidget({
     Key? key,
+    required this.text,
+    required this.icon,
   }) : super(key: key);
 
   @override
@@ -10,9 +14,21 @@ class ItemAddWidget extends StatefulWidget {
 }
 
 class _ItemAddWidgetState extends State<ItemAddWidget> {
+  var quantidade = 0;
+  void menosQuantidade() {
+    setState(() {
+      quantidade--;
+    });
+  }
+
+  void maisQuantidade() {
+    setState(() {
+      quantidade++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    var quantidade = 0;
     return StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) {
       return Padding(
@@ -23,10 +39,21 @@ class _ItemAddWidgetState extends State<ItemAddWidget> {
             Column(
               children: [
                 Icon(
-                  Icons.icecream,
+                  widget.icon,
                   size: 32,
                 ),
-                Text("Icecream")
+                Padding(
+                  padding: const EdgeInsets.only(top: 1),
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 82,
+                    child: Text(
+                      widget.text,
+                      style:
+                          TextStyle(color: Colors.grey.shade500, fontSize: 15),
+                    ),
+                  ),
+                ),
               ],
             ),
             Padding(
@@ -47,25 +74,16 @@ class _ItemAddWidgetState extends State<ItemAddWidget> {
                             color: Color(0xFFDAB68C),
                             borderRadius: BorderRadius.circular(100)),
                         child: IconButton(
-                          color: Colors.white,
-                          icon: Icon(Icons.remove, size: 20),
-                          onPressed: () {
-                            setState(() {
-                              if (quantidade <= 0) {
-                                quantidade = 0;
-                              } else {
-                                quantidade--;
-                              }
-                            });
-                          },
-                        ),
+                            color: Colors.white,
+                            icon: Icon(Icons.remove, size: 20),
+                            onPressed: quantidade > 0 ? menosQuantidade : null),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Container(
                         child: Text(
-                          "$quantidade cubos",
+                          "$quantidade",
                           style: TextStyle(fontSize: 16),
                         ),
                       ),
@@ -80,9 +98,7 @@ class _ItemAddWidgetState extends State<ItemAddWidget> {
                           color: Colors.white,
                           icon: Icon(Icons.add, size: 20),
                           onPressed: () {
-                            setState(() {
-                              quantidade++;
-                            });
+                            maisQuantidade();
                           },
                         ),
                       ),
