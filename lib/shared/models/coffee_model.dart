@@ -1,4 +1,5 @@
 import 'informacoes_nutricionais_model.dart';
+import 'ingredients_model.dart';
 
 class CoffeeModel {
   final String nome;
@@ -6,7 +7,7 @@ class CoffeeModel {
   final double preco;
   final String imagem;
   final int tempoPreparacao;
-  final List<String> ingredientes;
+  final List<Ingredients> ingredientes;
   final InformacoesNutricionaisModel informacoesNutricionais;
 
   CoffeeModel({

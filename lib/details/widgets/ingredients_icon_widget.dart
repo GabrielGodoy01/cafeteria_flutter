@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class IngredientsIconWidget extends StatelessWidget {
   final IconData icon;
   final String text;
+  final Color color;
   const IngredientsIconWidget(
-      {Key? key, required this.icon, required this.text})
+      {Key? key, required this.icon, required this.text, required this.color})
       : super(key: key);
 
   @override
@@ -17,8 +18,7 @@ class IngredientsIconWidget extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                  color: Colors.pink.shade300,
-                  borderRadius: BorderRadius.circular(15)),
+                  color: color, borderRadius: BorderRadius.circular(15)),
               height: MediaQuery.of(context).size.width * 0.12,
               width: MediaQuery.of(context).size.width * 0.12,
               child: Icon(

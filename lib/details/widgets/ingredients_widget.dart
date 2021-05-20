@@ -1,10 +1,13 @@
+import 'package:cafeteria_flutter/shared/models/ingredients_model.dart';
 import 'package:flutter/material.dart';
 
 import 'ingredients_icon_widget.dart';
 
 class IngredientsWidget extends StatelessWidget {
+  final List<Ingredients> ingredientes;
   const IngredientsWidget({
     Key? key,
+    required this.ingredientes,
   }) : super(key: key);
 
   @override
@@ -30,23 +33,15 @@ class IngredientsWidget extends StatelessWidget {
           ),
           Container(
             height: MediaQuery.of(context).size.width * 0.31,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                IngredientsIconWidget(
-                  icon: Icons.face,
-                  text: "Water expresso",
-                ),
-                IngredientsIconWidget(
-                  icon: Icons.favorite,
-                  text: "Sugar",
-                ),
-                IngredientsIconWidget(
-                  icon: Icons.access_alarm_sharp,
-                  text: "Coffee",
-                )
-              ],
-            ),
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return IngredientsIconWidget(
+                      icon: ingredientes[index].icon,
+                      text: ingredientes[index].ingrediente,
+                      color: ingredientes[index].color);
+                },
+                itemCount: ingredientes.length),
           )
         ]),
       ),

@@ -1,4 +1,5 @@
 import 'package:cafeteria_flutter/shared/models/informacoes_nutricionais_model.dart';
+import 'package:cafeteria_flutter/shared/models/ingredients_model.dart';
 import 'package:cafeteria_flutter/shared/widgets/like_icon_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class DetailsPage extends StatelessWidget {
   final double preco;
   final String imagem;
   final int tempoPreparacao;
-  final List<String> ingredientes;
+  final List<Ingredients> ingredientes;
   final InformacoesNutricionaisModel informacoesNutricionais;
 
   const DetailsPage(
@@ -83,7 +84,7 @@ class DetailsPage extends StatelessWidget {
             PrepareTimeWidget(
               tempoPreparacao: tempoPreparacao,
             ),
-            IngredientsWidget(),
+            IngredientsWidget(ingredientes: ingredientes),
             InformationsWidget(
               informacoesNutricionais: informacoesNutricionais,
             ),

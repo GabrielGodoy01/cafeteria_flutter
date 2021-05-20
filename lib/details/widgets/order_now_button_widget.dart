@@ -23,6 +23,18 @@ class _OrderNowButtonWidgetState extends State<OrderNowButtonWidget> {
   double get precoTotal =>
       double.parse((widget.preco * quantidade).toStringAsFixed(2));
 
+  void menosQuantidade() {
+    setState(() {
+      quantidade--;
+    });
+  }
+
+  void maisQuantidade() {
+    setState(() {
+      quantidade++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -170,7 +182,7 @@ class _OrderNowButtonWidgetState extends State<OrderNowButtonWidget> {
                                                       Icon(Icons.add, size: 20),
                                                   onPressed: () {
                                                     setState(() {
-                                                      quantidade++;
+                                                      maisQuantidade();
                                                     });
                                                   },
                                                 ),
