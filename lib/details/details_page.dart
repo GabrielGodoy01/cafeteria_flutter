@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'widgets/informations_widget.dart';
 import 'widgets/ingredients_widget.dart';
-import 'widgets/order_now_button_widget.dart';
+import '../order/order_now_button_widget.dart';
 import 'widgets/prepare_time_widget.dart';
 
 class DetailsPage extends StatelessWidget {
