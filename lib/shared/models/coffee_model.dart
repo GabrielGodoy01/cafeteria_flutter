@@ -5,6 +5,7 @@ class CoffeeModel {
   final String nome;
   final String descricao;
   final double preco;
+
   final String imagem;
   final int tempoPreparacao;
   final List<Ingredients> ingredientes;
