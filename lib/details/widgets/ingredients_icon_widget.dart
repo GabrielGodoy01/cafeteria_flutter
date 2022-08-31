@@ -12,37 +12,32 @@ class IngredientsIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 16, top: 16),
-      child: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                  color: color, borderRadius: BorderRadius.circular(15)),
-              height: MediaQuery.of(context).size.width * 0.12,
-              width: MediaQuery.of(context).size.width * 0.12,
-              child: Icon(
-                icon,
-                color: Colors.white,
-                size: 24.0,
-              ),
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                color: color, borderRadius: BorderRadius.circular(15)),
+            height: 50,
+            width: 50,
+            child: Icon(
+              icon,
+              color: Colors.white,
+              size: 24.0,
             ),
-            Container(
-              padding: EdgeInsets.only(top: 4),
-              height: MediaQuery.of(context).size.width * 0.14,
-              width: MediaQuery.of(context).size.width * 0.14,
-              alignment: Alignment.topCenter,
-              child: Text(
-                text,
-                style: TextStyle(
-                  color: Colors.grey.shade500,
-                  fontSize: 12,
-                ),
-                textAlign: TextAlign.center,
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 4),
+            alignment: Alignment.topCenter,
+            child: Text(
+              text,
+              style: TextStyle(
+                color: Colors.grey.shade500,
+                fontSize: 12,
               ),
-            )
-          ],
-        ),
+              textAlign: TextAlign.center,
+            ),
+          )
+        ],
       ),
     );
   }

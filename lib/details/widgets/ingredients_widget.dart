@@ -20,7 +20,6 @@ class IngredientsWidget extends StatelessWidget {
             bottom: BorderSide(width: 1.0, color: Colors.grey.shade300)),
       ),
       alignment: Alignment.topLeft,
-      height: MediaQuery.of(context).size.width * 0.44,
       child: Padding(
         padding: const EdgeInsets.only(left: 20, top: 24),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -31,8 +30,8 @@ class IngredientsWidget extends StatelessWidget {
                 color: Color(0xFF473D3A),
                 fontSize: 17),
           ),
-          Container(
-            height: MediaQuery.of(context).size.width * 0.31,
+          SizedBox(
+            height: 110,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {

@@ -10,7 +10,7 @@ class CardImagemWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.4,
+        width: 200,
         height: MediaQuery.of(context).size.height * 0.28,
         decoration: BoxDecoration(
           image: DecorationImage(

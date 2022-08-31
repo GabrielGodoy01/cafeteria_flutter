@@ -13,71 +13,65 @@ class HomeRepository {
         tempoPreparacao: 5,
         ingredientes: [
           Ingredients(
-              color: Colors.pink.shade400,
-              ingrediente: "Water",
-              icon: Icons.face),
+            color: Colors.pink.shade400,
+            ingrediente: "Leite",
+            icon: Icons.local_bar,
+          ),
           Ingredients(
-              color: Colors.blue, ingrediente: "Sugar", icon: Icons.favorite),
+            color: Colors.brown.shade400,
+            ingrediente: "Café",
+            icon: Icons.coffee,
+          ),
           Ingredients(
-              color: Colors.brown.shade400,
-              ingrediente: "Coffee",
-              icon: Icons.time_to_leave),
-          Ingredients(
-              color: Colors.pink.shade400,
-              ingrediente: "Water",
-              icon: Icons.face),
-          Ingredients(
-              color: Colors.pink.shade400,
-              ingrediente: "Water",
-              icon: Icons.face),
-          Ingredients(
-              color: Colors.pink.shade400,
-              ingrediente: "Water",
-              icon: Icons.face),
-          Ingredients(
-              color: Colors.pink.shade400,
-              ingrediente: "Water",
-              icon: Icons.face),
+            color: Colors.blue,
+            ingrediente: "Sugar",
+            icon: Icons.icecream,
+          ),
         ],
         informacoesNutricionais: InformacoesNutricionaisModel(
             calorias: 250, cafeina: 150, proteinas: 10)),
     CoffeeModel(
         nome: "Cappuccino",
-        descricao: "Café com leite devidamente preparado por profissionais",
+        descricao: "Um Cappuccino perfeito para dias friso e chuvosos",
         preco: 12.99,
         imagem: "assets/twocup.png",
         tempoPreparacao: 15,
         ingredientes: [
           Ingredients(
-              color: Colors.pink.shade400,
-              ingrediente: "Water",
-              icon: Icons.face),
+            color: Colors.brown.shade400,
+            ingrediente: "Cappuccino",
+            icon: Icons.coffee,
+          ),
           Ingredients(
-              color: Colors.blue, ingrediente: "Sugar", icon: Icons.favorite),
-          Ingredients(
-              color: Colors.brown.shade400,
-              ingrediente: "Coffee",
-              icon: Icons.time_to_leave),
+            color: Colors.blue,
+            ingrediente: "Sugar",
+            icon: Icons.icecream,
+          ),
         ],
         informacoesNutricionais: InformacoesNutricionaisModel(
             calorias: 12, cafeina: 12, proteinas: 12)),
     CoffeeModel(
-        nome: "Cappuccino com leite",
-        descricao: "Café com leite devidamente preparado por profissionais",
+        nome: "Chá com leite",
+        descricao: "Um chá delicioso acompanhado com leite",
         preco: 12.99,
         imagem: "assets/twocup.png",
         tempoPreparacao: 45,
         ingredientes: [
           Ingredients(
-              color: Colors.pink.shade400,
-              ingrediente: "Water",
-              icon: Icons.face),
+            color: Colors.brown.shade400,
+            ingrediente: "Chá",
+            icon: Icons.coffee,
+          ),
           Ingredients(
-              color: Colors.blue, ingrediente: "Sugar", icon: Icons.favorite),
+            color: Colors.blue,
+            ingrediente: "Leite",
+            icon: Icons.local_bar,
+          ),
           Ingredients(
-              color: Colors.brown.shade400,
-              ingrediente: "Coffee",
-              icon: Icons.time_to_leave),
+            color: Colors.pink.shade400,
+            ingrediente: "Açucar",
+            icon: Icons.icecream,
+          ),
         ],
         informacoesNutricionais: InformacoesNutricionaisModel(
             calorias: 12000, cafeina: 139, proteinas: 1000)),

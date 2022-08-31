@@ -1,8 +1,9 @@
-import 'package:cafeteria_flutter/details/details_page.dart';
-import 'package:cafeteria_flutter/shared/models/informacoes_nutricionais_model.dart';
-import 'package:cafeteria_flutter/shared/models/ingredients_model.dart';
-import 'package:cafeteria_flutter/shared/widgets/like_icon_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../details/details_page.dart';
+import '../../shared/models/informacoes_nutricionais_model.dart';
+import '../../shared/models/ingredients_model.dart';
+import '../../shared/widgets/like_icon_widget.dart';
 
 class CardCoffeeWidget extends StatelessWidget {
   final String nome;
@@ -27,7 +28,7 @@ class CardCoffeeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       width: 250,
       child: Column(
         children: [
@@ -99,7 +100,7 @@ class CardCoffeeWidget extends StatelessWidget {
               Positioned(
                 top: -60,
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
+                  width: 350,
                   child: Image(
                     image: AssetImage(imagem),
                   ),
@@ -107,8 +108,11 @@ class CardCoffeeWidget extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(
+            height: 8,
+          ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.8,
+            width: 230,
             child: TextButton(
               onPressed: () {
                 Navigator.push(

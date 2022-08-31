@@ -20,9 +20,8 @@ class InformationsWidget extends StatelessWidget {
               bottom: BorderSide(width: 2.0, color: Colors.grey.shade300)),
         ),
         alignment: Alignment.topLeft,
-        height: MediaQuery.of(context).size.width * 0.39,
         child: Padding(
-          padding: const EdgeInsets.only(left: 20, top: 24),
+          padding: const EdgeInsets.only(left: 20, top: 24, bottom: 24),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(
@@ -33,7 +32,6 @@ class InformationsWidget extends StatelessWidget {
                   fontSize: 17),
             ),
             Container(
-              height: MediaQuery.of(context).size.width * 0.24,
               child: Column(
                 children: [
                   NutricionalInformationWidget(

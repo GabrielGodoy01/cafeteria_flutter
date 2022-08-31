@@ -31,25 +31,24 @@ class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
-        Container(
-          decoration: BoxDecoration(color: Color(0xFFDAB68C)),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 32),
-            child: Column(
-              children: [
-                Container(
-                  alignment: Alignment.topLeft,
-                  height: MediaQuery.of(context).size.width * 0.8,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.only(top: 20, left: 18),
-                            width: MediaQuery.of(context).size.width * 0.55,
-                            child: Text(
+      body: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: 400, maxHeight: 700),
+          child: Stack(children: [
+            Container(
+              decoration: BoxDecoration(color: Color(0xFFDAB68C)),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+                child: Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
                               nome,
                               style: TextStyle(
                                   fontSize: 34.0,
@@ -57,58 +56,57 @@ class DetailsPage extends StatelessWidget {
                                   color: Colors.white),
                               textAlign: TextAlign.left,
                             ),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(top: 20, left: 18),
-                        width: MediaQuery.of(context).size.width * 0.55,
-                        child: Text(
-                          descricao,
-                          style: TextStyle(
-                            fontSize: 14.0,
-                            color: Colors.white,
-                          ),
-                          textAlign: TextAlign.left,
+                            LikeIconWidget()
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.6,
+                          child: Text(
+                            descricao,
+                            style: TextStyle(
+                              fontSize: 14.0,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                PrepareTimeWidget(
+                  tempoPreparacao: tempoPreparacao,
+                ),
+                IngredientsWidget(ingredientes: ingredientes),
+                InformationsWidget(
+                  informacoesNutricionais: informacoesNutricionais,
+                ),
+                OrderNowButtonWidget(
+                  preco: preco,
                 ),
               ],
             ),
-          ),
-        ),
-        Column(
-          children: [
-            PrepareTimeWidget(
-              tempoPreparacao: tempoPreparacao,
+            Positioned(
+              left: 50,
+              top: 30,
+              child: Container(
+                width: 500,
+                child: Image(
+                  image: AssetImage(imagem),
+                ),
+              ),
             ),
-            IngredientsWidget(ingredientes: ingredientes),
-            InformationsWidget(
-              informacoesNutricionais: informacoesNutricionais,
-            ),
-            OrderNowButtonWidget(
-              preco: preco,
-            ),
-          ],
+          ]),
         ),
-        Positioned(
-          top: 60,
-          left: 250,
-          child: LikeIconWidget(),
-        ),
-        Positioned(
-          top: 30,
-          left: 30,
-          child: Container(
-            width: MediaQuery.of(context).size.width * 1.4,
-            child: Image(
-              image: AssetImage(imagem),
-            ),
-          ),
-        ),
-      ]),
+      ),
     );
   }
 }
