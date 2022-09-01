@@ -6,7 +6,7 @@ part of 'order_now_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$OrderNowController on OrderNowControllerBase, Store {
   Computed<double>? _$precoTotalComputed;
@@ -17,7 +17,8 @@ mixin _$OrderNowController on OrderNowControllerBase, Store {
               name: 'OrderNowControllerBase.precoTotal'))
           .value;
 
-  final _$quantidadeAtom = Atom(name: 'OrderNowControllerBase.quantidade');
+  late final _$quantidadeAtom =
+      Atom(name: 'OrderNowControllerBase.quantidade', context: context);
 
   @override
   int get quantidade {
@@ -32,7 +33,8 @@ mixin _$OrderNowController on OrderNowControllerBase, Store {
     });
   }
 
-  final _$valorAtom = Atom(name: 'OrderNowControllerBase.valor');
+  late final _$valorAtom =
+      Atom(name: 'OrderNowControllerBase.valor', context: context);
 
   @override
   int get valor {
@@ -47,7 +49,8 @@ mixin _$OrderNowController on OrderNowControllerBase, Store {
     });
   }
 
-  final _$precoAtom = Atom(name: 'OrderNowControllerBase.preco');
+  late final _$precoAtom =
+      Atom(name: 'OrderNowControllerBase.preco', context: context);
 
   @override
   double get preco {
@@ -62,8 +65,8 @@ mixin _$OrderNowController on OrderNowControllerBase, Store {
     });
   }
 
-  final _$controleTemperaturaAtom =
-      Atom(name: 'OrderNowControllerBase.controleTemperatura');
+  late final _$controleTemperaturaAtom = Atom(
+      name: 'OrderNowControllerBase.controleTemperatura', context: context);
 
   @override
   int get controleTemperatura {
@@ -78,8 +81,8 @@ mixin _$OrderNowController on OrderNowControllerBase, Store {
     });
   }
 
-  final _$OrderNowControllerBaseActionController =
-      ActionController(name: 'OrderNowControllerBase');
+  late final _$OrderNowControllerBaseActionController =
+      ActionController(name: 'OrderNowControllerBase', context: context);
 
   @override
   void trocaTemperatura(int value) {

@@ -1,4 +1,6 @@
+import 'package:cafeteria_flutter/details/details_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../../details/details_page.dart';
 import '../../shared/models/informacoes_nutricionais_model.dart';
@@ -27,6 +29,7 @@ class CardCoffeeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = DetailsController();
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       width: 250,
@@ -88,7 +91,14 @@ class CardCoffeeWidget extends StatelessWidget {
                                     fontSize: 20,
                                     fontFamily: "PTSerif"),
                               ),
-                              LikeIconWidget(),
+                              Observer(builder: (_) {
+                                return LikeIconWidget(
+                                  isClicked: controller.isClicked,
+                                  onPressed: () {
+                                    controller.setIsClicked();
+                                  },
+                                );
+                              }),
                             ],
                           ),
                         )

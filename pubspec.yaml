@@ -12,13 +12,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
-  mobx: ^2.0.1
-  flutter_mobx: ^2.0.0
+  cupertino_icons: ^1.0.5
+  mobx: ^2.0.7+5
+  flutter_mobx: ^2.0.6+1
 
 dev_dependencies:
-  mobx_codegen: ^2.0.1+3
-  build_runner: ^2.0.3
+  mobx_codegen: ^2.0.7
+  build_runner: ^2.2.0
   flutter_test:
     sdk: flutter
 
@@ -33,7 +33,6 @@ flutter:
     - family: Varela
       fonts:
         - asset: assets/Varela-Regular.ttf
-        
      
 
   assets:

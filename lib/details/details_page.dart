@@ -1,7 +1,9 @@
+import 'package:cafeteria_flutter/details/details_controller.dart';
 import 'package:cafeteria_flutter/shared/models/informacoes_nutricionais_model.dart';
 import 'package:cafeteria_flutter/shared/models/ingredients_model.dart';
 import 'package:cafeteria_flutter/shared/widgets/like_icon_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'widgets/informations_widget.dart';
 import 'widgets/ingredients_widget.dart';
@@ -30,6 +32,7 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = DetailsController();
     return Scaffold(
       body: Center(
         child: ConstrainedBox(
@@ -39,7 +42,7 @@ class DetailsPage extends StatelessWidget {
               decoration: BoxDecoration(color: Color(0xFFDAB68C)),
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
                 child: Column(
                   children: [
                     Column(
@@ -48,15 +51,35 @@ class DetailsPage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              nome,
-                              style: TextStyle(
-                                  fontSize: 34.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                              textAlign: TextAlign.left,
+                            Row(
+                              children: [
+                                IconButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  icon: Icon(
+                                    Icons.arrow_back_ios,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  nome,
+                                  style: TextStyle(
+                                      fontSize: 34.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                  textAlign: TextAlign.left,
+                                ),
+                              ],
                             ),
-                            LikeIconWidget()
+                            Observer(builder: (_) {
+                              return LikeIconWidget(
+                                isClicked: controller.isClicked,
+                                onPressed: () {
+                                  controller.setIsClicked();
+                                },
+                              );
+                            })
                           ],
                         ),
                         SizedBox(

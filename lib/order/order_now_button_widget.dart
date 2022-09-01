@@ -246,15 +246,15 @@ class _OrderNowButtonWidgetState extends State<OrderNowButtonWidget> {
                   child: Column(
                     children: [
                       ItemAddWidget(
-                        text: "Sugar",
+                        text: "Açúcar",
                         icon: Icons.food_bank_outlined,
                       ),
                       ItemAddWidget(
-                        text: "Ice",
+                        text: "Gelo",
                         icon: Icons.food_bank_rounded,
                       ),
                       ItemAddWidget(
-                        text: "Cream",
+                        text: "Creme",
                         icon: Icons.chat_bubble_sharp,
                       )
                     ],

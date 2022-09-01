@@ -24,7 +24,7 @@ class HomeRepository {
           ),
           Ingredients(
             color: Colors.blue,
-            ingrediente: "Sugar",
+            ingrediente: "Açúcar",
             icon: Icons.icecream,
           ),
         ],
@@ -44,7 +44,7 @@ class HomeRepository {
           ),
           Ingredients(
             color: Colors.blue,
-            ingrediente: "Sugar",
+            ingrediente: "Açúcar",
             icon: Icons.icecream,
           ),
         ],
