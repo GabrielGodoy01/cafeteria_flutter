@@ -17,7 +17,7 @@ class AppWidget extends StatelessWidget {
         PointerDeviceKind.unknown
       }),
       debugShowCheckedModeBanner: false,
-      title: "Cafeteria - Flutter App",
+      title: "Coffee Shop",
       theme: ThemeData(fontFamily: 'Varela'),
       home: HomePage(),
     );
